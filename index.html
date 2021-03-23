@@ -4,10 +4,63 @@
 <head>
     <meta charset="utf-8">
     <title></title>
+    <script type="text/javascript" src="MyLib.js">
+    </script>
 </head>
 
 <body>
-    <script src="MyLib.js"></script>
+    <script type="text/javascript">
+    	console.log(MyLib.validNumber(1))
+    	console.log(MyLib.evenFilter([1,2,3,4,5,6,7,8]))
+    	console.log(MyLib.cutStrings(["11111111","222222","3333333","4444444","55555555"],2))
+	    console.log(MyLib.getFibonachi(10))
+	    
+	    var myHonda = {
+		  color: "red",
+		  wheels: 4,
+		  engine: {
+		    cylinders: 4,
+		    size: {
+		    	hey:"hey",
+		    	hoy:"hoy"
+		    }
+		  }
+		};
+		var myObj = new Object(),
+	    str = "myString",
+	    rand = Math.random(),
+	    obj = new Object();
+
+		myObj.type              = "Dot syntax";
+		myObj["date created"]   = "String with space";
+		myObj[str]              = "String value";
+		myObj[rand]             = "Random Number";
+		myObj[obj]              = "Object";
+		myObj[""]               = "Even an empty string";
+
+		console.log(MyLib.myDeepCopy(myHonda))
+		console.log(MyLib.myDeepCopy(myObj))
+		console.log(MyLib.powBuilder(3))
+		let st = "stringa"
+		console.log(st.capitalize());
+		console.log(MyLib.countIntegerArguments(1,2,"3",[1,2],{color: "red"}))
+		//console.log(MyLib.countIntegerArgumentstwo(1,2,"3",[1,2],{color: "red"}))
+		console.log(MyLib.countIntegerArgumentstr(1,2,"3",[1,2],{color: "red"}))
+		function sayHi() {
+			alert("Hi");
+		}
+		MyLib.executeWithDelay(sayHi,1000)
+		console.log(MyLib.getComment(2))
+		let chel = {
+		    name: "chel",
+		    gender: "helicopter",
+		    personalInfo: {
+		        dob: "6/10/2000",
+		        ssn: "smth"
+		    }
+		}
+		setTimeout(() => {  console.log(MyLib.getUserAge(chel)); }, 4000);
+	</script>
 </body>
 
 </html>
