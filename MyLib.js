@@ -84,8 +84,15 @@ var MyLib =
 	},
 	getUserAge : function(user){
 		let date = user.personalInfo.dob;
-		return (new Date().getYear() - (new Date(date)).getYear())-1
-
+		let now = new Date()
+		if(now.getMonth() < new Date(date).getMonth()) 
+			return (new Date().getYear() - (new Date(date)).getYear())-1
+		else {
+			if(now.getDate() <  new Date(date).getDate()) 
+	            return (now.getYear() -  new Date(date).getYear() - 1)
+	        else
+	            return (now.getYear() -  new Date(date).getYear())
+		}
 	}
 }
 String.prototype.capitalize = function() {
